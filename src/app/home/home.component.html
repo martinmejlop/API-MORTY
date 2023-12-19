@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Characters</h1>
+    <div class="characters-grid">
+        <div *ngFor="let character of data" class="character-card">
+            <a [routerLink]="['/character', character.id]">
+                <img [src]="character.image" alt="{{character.name}}">
+            </a>
+            <h2>{{character.name}}</h2>
+        </div>
+        
+    </div>
+    <div class="pagination">
+        <button (click)="loadPage(currentPage - 1)" [disabled]="currentPage === 1">Atrás</button>
+        <span>Pagina {{currentPage}}</span>
+        <button (click)="loadPage(currentPage + 1); scrollToTop()" [disabled]="!pageInfo?.next">Siguiente</button>
+    </div>
+</div>
