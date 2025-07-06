@@ -2,27 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/api-martin/server/server.mjs",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "dist/api-martin/browser/**",
-      "use": "@vercel/static"
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist/api-martin/browser"
+      }
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "dist/api-martin/server/server.mjs"
-    },
-    {
       "src": "/(.*)",
-      "dest": "dist/api-martin/browser/$1"
+      "dest": "/index.html"
     }
-  ],
-  "functions": {
-    "dist/api-martin/server/server.mjs": {
-      "maxDuration": 30
-    }
-  }
+  ]
 } 
