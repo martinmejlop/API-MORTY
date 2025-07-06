@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/api-martin/server/server.mjs",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "dist/api-martin/browser/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "dist/api-martin/server/server.mjs"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dist/api-martin/browser/$1"
+    }
+  ],
+  "functions": {
+    "dist/api-martin/server/server.mjs": {
+      "maxDuration": 30
+    }
+  }
+} 
