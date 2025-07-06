@@ -19,10 +19,5 @@
       "src": "/(.*)",
       "dest": "dist/api-martin/browser/$1"
     }
-  ],
-  "functions": {
-    "dist/api-martin/server/server.mjs": {
-      "maxDuration": 30
-    }
-  }
+  ]
 } 
