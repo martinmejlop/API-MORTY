@@ -10,6 +10,7 @@ COPY package*.json ./
 # Instalar dependencias
 RUN npm install
 RUN npm install tslib
+RUN npm install -g @angular/cli
 
 # Copiar el resto del código fuente
 COPY . .
