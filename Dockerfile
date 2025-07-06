@@ -9,6 +9,7 @@ COPY package*.json ./
 
 # Instalar dependencias
 RUN npm install
+RUN npm install tslib
 
 # Copiar el resto del código fuente
 COPY . .
